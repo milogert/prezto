@@ -15,6 +15,12 @@ fi
 # Export the proper editor for godssake.
 export EDITOR=vim
 
+# Java home for OS X.
+if [ -f /usr/libexec/java_home ]
+then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
 # Bind the proper keys for the numpad.
 # 0 . Enter
 bindkey -s "^[Op" "0"
