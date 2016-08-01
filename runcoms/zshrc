@@ -28,6 +28,11 @@ then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+if [ -d ~/scripts/grinder ]
+then
+    alias startgrinder="java -cp ~/scripts/grinder/lib/grinder.jar  net.grinder.TCPProxy -remoteport 55555 -localport 5050 -colour"
+fi
+
 # Bind the proper keys for the numpad.
 # 0 . Enter
 bindkey -s "^[Op" "0"
