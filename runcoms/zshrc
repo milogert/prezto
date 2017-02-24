@@ -12,6 +12,13 @@ fi
 
 # Customize to your needs...
 
+# Virtualenv stuff.
+if [ -f /usr/bin/virtualenvwrapper.sh ]
+then
+    source /usr/bin/virtualenvwrapper.sh
+    export WORKON_HOME=~/.virtualenvs
+fi
+
 # Export the proper editor for godssake.
 export EDITOR=vim
 
