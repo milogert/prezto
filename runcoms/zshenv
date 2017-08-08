@@ -3,9 +3,19 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Milo Gertjejansen <milo@milogert.com>
 #
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+# Password store-related vars.
+export PASSWORD_STORE_GENERATED_LENGTH=32
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+if [[ "$(uname)" -eq "Darwin" ]]; then
+  export PASSWORD_STORE_DIR=/Volumes/mobile/passwords;
+else
+  export PASSWORD_STORE_DIR=/run/media/milo/mobile/passwords;
 fi
