@@ -17,6 +17,7 @@ fi
 # Editors
 #
 
+export TERMINAL=termite
 export EDITOR='nano'
 export VISUAL='nano'
 export PAGER='less'
