@@ -22,6 +22,12 @@ fi
 # Export the proper editor for godssake.
 export EDITOR=vim
 
+# Set GPG TTY
+export GPG_TTY=$(tty)
+
+# Refresh gpg-agent tty in case user switches into an X session
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 # Java home for OS X.
 if [ -f /usr/libexec/java_home ]
 then
