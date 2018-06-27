@@ -41,8 +41,7 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'pacman' \
   'tmux' \
-  'git' \
-  'gpg'
+  'git'
 
 #
 # Autosuggestions
