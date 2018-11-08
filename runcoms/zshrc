@@ -72,3 +72,4 @@ PERL_MM_OPT="INSTALL_BASE=/home/milo/perl5"; export PERL_MM_OPT;
 function lb() {
     vim ~/logbook/$(date '+%Y-%m-%d').md
 }
+

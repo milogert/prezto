@@ -15,6 +15,26 @@ fi
 export PASSWORD_STORE_GENERATED_LENGTH=32
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+
+# system-wide environment settings for zsh(1)
+if [ -x /usr/libexec/path_helper ]; then
+	eval `/usr/libexec/path_helper -s`
+fi
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path
+
+# Set the list of directories that Zsh searches for programs.
+path=(
+  ~/Library/Python/2.7/bin/
+  /usr/local/{bin,sbin}
+  $path
+  /usr/local/mysql/bin
+)
+
 # gpg-agent ssh config.
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
