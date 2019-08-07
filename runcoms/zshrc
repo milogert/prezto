@@ -31,7 +31,8 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # Java home for OS X.
 if [ -f /usr/libexec/java_home ]
 then
-  export JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+    #export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 fi
 
 if [ -d ~/scripts/grinder ]
@@ -70,6 +71,10 @@ PERL_MM_OPT="INSTALL_BASE=/home/milo/perl5"; export PERL_MM_OPT;
 
 # Logbook.
 function lb() {
-    vim ~/logbook/$(date '+%Y-%m-%d').md
+    b=~/logbook/$(date '+%Y-%m-%d').md
+    if [ ! -f ${b} ]; then
+        echo "vi: nonumber norelativenumber wrap linebreak nolist\n\n# MM\n\n" > ${b}
+    fi
+    nvim "+normal G$" ${b}
 }
 
