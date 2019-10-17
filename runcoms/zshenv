@@ -15,8 +15,6 @@ fi
 export PASSWORD_STORE_GENERATED_LENGTH=32
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
-export EDITOR='vim'
-export VISUAL='vim'
 export PAGER='less'
 
 # system-wide environment settings for zsh(1)
@@ -29,8 +27,8 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  ~/.cargo/bin
   ~/.local/bin
-  ~/Library/Python/2.7/bin/
   /usr/local/{bin,sbin}
   $path
   /usr/local/mysql/bin
@@ -41,3 +39,17 @@ export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# Set the editor and visual.
+if [ -x "$(command -v nvim)" ]; then
+    export EDITOR='nvim'
+    export VISUAL='nvim'
+else
+    echo >&2 "neovim is not installed"
+    export EDITOR='vim'
+    export VISUAL='vim'
+fi
+
+# Make sure virtualenv is working for a new shell.
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi

@@ -53,3 +53,4 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 elif [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty2 ]]; then
   startx
 fi
+
