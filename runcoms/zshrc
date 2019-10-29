@@ -75,5 +75,5 @@ function lb() {
     if [ ! -f ${b} ]; then
         echo "vi: nonumber norelativenumber wrap linebreak nolist\n\n# MM\n\n" > ${b}
     fi
-    nvim "+normal G$" ${b}
+    ${EDITOR} "+normal G$" ${b}
 }
