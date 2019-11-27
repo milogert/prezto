@@ -32,6 +32,8 @@ path=(
   /usr/local/{bin,sbin}
   $path
   /usr/local/mysql/bin
+  /Users/milo/Library/Python/2.7/bin
+  /Users/milo/Library/Python/3.7/bin
 )
 
 # gpg-agent ssh config.
@@ -53,3 +55,5 @@ fi
 if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
+
+export NPM_TOKEN=cd4726aa-e38c-4943-9880-0134e8cbdadd
