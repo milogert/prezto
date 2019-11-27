@@ -56,4 +56,7 @@ if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
 
-export NPM_TOKEN=cd4726aa-e38c-4943-9880-0134e8cbdadd
+if [[ ! -e /tmp/npm_token ]]; then
+    pass tools/npm_token > /tmp/npm_token
+fi
+export NPM_TOKEN=$(cat /tmp/npm_token)
