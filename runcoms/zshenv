@@ -16,6 +16,7 @@ export PASSWORD_STORE_GENERATED_LENGTH=32
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 export PAGER='less'
+export ANDROID_HOME='/opt/android-sdk'
 
 # system-wide environment settings for zsh(1)
 if [ -x /usr/libexec/path_helper ]; then
