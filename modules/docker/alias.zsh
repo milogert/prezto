@@ -8,6 +8,10 @@
 #
 # Aliases
 #
+#
+
+# Help text
+alias dkhelp='alias | grep "^dk"'
 
 # Docker
 alias dk='docker'

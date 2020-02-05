@@ -11,6 +11,11 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# Private env vars.
+if [[ -s "${ZDOTDIR:-$HOME}/.zshenv_priv" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshenv_priv"
+fi
+
 # Password store-related vars.
 export PASSWORD_STORE_GENERATED_LENGTH=32
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
@@ -56,8 +61,3 @@ fi
 if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
   source "${VIRTUAL_ENV}/bin/activate"
 fi
-
-if [[ ! -e /tmp/npm_token ]]; then
-    pass tools/npm_token > /tmp/npm_token
-fi
-export NPM_TOKEN=$(cat /tmp/npm_token)
