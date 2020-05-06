@@ -11,7 +11,9 @@
 #
 
 # Help text
-alias dkhelp='alias | grep "^dk"'
+function dkhelp {
+    alias | grep "^dk" | grep "${1}"
+}
 
 # Docker
 alias dk='docker'
@@ -177,5 +179,8 @@ alias dkcsc='docker-compose scale'
 alias dkcS='docker-compose restart'
 alias dkcu='docker-compose up'
 alias dkcU='docker-compose up -d'
+function dkcuart() {
+  art -on ${1}-stage docker-compose up
+}
 alias dkcv='docker-compose version'
 alias dkcx='docker-compose stop'

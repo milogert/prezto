@@ -56,3 +56,5 @@ elif [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty2 ]]; then
   logout
 fi
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
