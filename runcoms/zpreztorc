@@ -43,6 +43,7 @@ zstyle ':prezto:load' pmodule \
   'pacman' \
   'tmux' \
   'docker' \
+  'gpg' \
   'git'
 
 #

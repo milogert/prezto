@@ -42,11 +42,6 @@ path=(
   /Users/milo/Library/Python/3.7/bin
 )
 
-# gpg-agent ssh config.
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
 # Set the editor and visual.
 if [ -x "$(command -v nvim)" ]; then
     export EDITOR='nvim'
