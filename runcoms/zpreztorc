@@ -37,14 +37,15 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'wakeonlan' \
   'utility' \
   'completion' \
   'prompt' \
   'pacman' \
   'tmux' \
   'docker' \
-  'gpg' \
   'git'
+  # This doesn't work, according to https://github.com/sorin-ionescu/prezto/issues/1839 'gpg' \
 
 #
 # Autosuggestions
