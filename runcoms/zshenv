@@ -17,6 +17,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zshenv_priv" ]]; then
   source "${ZDOTDIR:-$HOME}/.zshenv_priv"
 fi
 
+# Directory hashes
+for i in $(ls ~/git); do
+  hash -d $i=~/git/$i
+done
+hash -d zsh=~/.zprezto
+hash -d dotfiles=~/.dotfiles
+
 # Password store-related vars.
 export PASSWORD_STORE_GENERATED_LENGTH=32
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
@@ -41,6 +48,12 @@ path=(
   /usr/local/mysql/bin
   /Users/milo/Library/Python/2.7/bin
   /Users/milo/Library/Python/3.7/bin
+  ~/.config/yarn/global
+)
+
+fpath=(
+  ~/.zprezto/runcoms/functions
+  $fpath
 )
 
 # Set the editor and visual.
@@ -59,8 +72,8 @@ if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
 fi
 
 #export NVM_DIR="$HOME/.nvm"
-#[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Setup GPG stuff.
 export GPG_TTY="$(tty)"

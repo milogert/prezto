@@ -30,7 +30,6 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-  'syntax-highlighting' \
   'environment' \
   'terminal' \
   'editor' \
@@ -45,6 +44,7 @@ zstyle ':prezto:load' pmodule \
   'tmux' \
   'docker' \
   'git'
+  # 'syntax-highlighting' \
   # This doesn't work, according to https://github.com/sorin-ionescu/prezto/issues/1839 'gpg' \
 
 #
