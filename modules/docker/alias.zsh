@@ -180,7 +180,11 @@ alias dkcS='docker-compose restart'
 alias dkcu='docker-compose up'
 alias dkcU='docker-compose up -d'
 function dkcuart() {
-  art -on ${1}-stage docker-compose up
+  environment=${1}
+  if [[ -f .env.${environment} ]]; then
+    \cp .env.${environment} .env
+  fi
+  art -on ${environment}-stage docker-compose up
 }
 alias dkcv='docker-compose version'
 alias dkcx='docker-compose stop'
